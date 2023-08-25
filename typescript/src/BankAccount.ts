@@ -1,12 +1,16 @@
 export class BankAccount {
   constructor(
     public readonly accountHolder: string,
-    public accountBalance: number
+    private _accountBalance: number
   ) {}
 
+  get accountBalance() {
+    return this._accountBalance;
+  }
+
   withdraw(amount: number): boolean {
-    if (amount > 0 && amount <= this.accountBalance) {
-      this.accountBalance -= amount;
+    if (amount > 0 && amount <= this._accountBalance) {
+      this._accountBalance -= amount;
 
       return true;
     }
