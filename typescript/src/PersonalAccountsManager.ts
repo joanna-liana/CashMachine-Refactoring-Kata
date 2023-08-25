@@ -9,7 +9,8 @@ export class PersonalAccountsManager {
   }
 
   getAccountForCustomer(
-    customerName: string /*, String bankManager */
+    customerName: string,
+    _bankManager: string
   ): BankAccount {
     const customerAccount = this.accounts
       .find(a => a.accountHolder === customerName);

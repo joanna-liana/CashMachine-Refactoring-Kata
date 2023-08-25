@@ -13,6 +13,8 @@ export class PersonalAccountFinder {
     return this.branchFinder
       .findBranchForTown(town)
       .personalAccounts
-      .getAccountForCustomer(customerName);
+      // now CashMachine does not care about the change
+      // in the indirect dependency
+      .getAccountForCustomer(customerName, 'manager name');
   }
 }
